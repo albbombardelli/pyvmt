@@ -134,7 +134,8 @@ class Ic3iaSolver(Solver):
         if res_type == _Ic3iaWitnessRes.COUNTEREXAMPLE:
             trace = self._read_counterexample(solver_out)
         elif res_type == _Ic3iaWitnessRes.INVARIANT:
-            invar = self._read_invariant(solver_out)
+            # TODO: Temporary, currently bugged.
+            invar = None #self._read_invariant(solver_out)
         elif res_type == _Ic3iaWitnessRes.ERROR:
             pass
         last_line = solver_out.readlines()[-1].strip()
